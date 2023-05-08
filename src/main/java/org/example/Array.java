@@ -20,7 +20,7 @@ public class Array {
         int target = arr[0];
         //登記表
         for (int i = 0; i < arr.length; i++) {
-            if (table.containsKey(arr[i])) { //如果table已經存過關於這個數字
+            if (table.containsKey(arr[i])) { //如果table已經存過關於這個數字的資訊
                 table.replace(arr[i], table.get(arr[i]) + 1); //讓次數上升
             } else {
                 table.put(arr[i], 1); //第一次出現就安心放
