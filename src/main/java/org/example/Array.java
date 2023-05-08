@@ -6,11 +6,38 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Array {
+    //169多數元素
+    @Test
+    public void lotsOfElementOutput() {
+        int[] arr = {3, 2, 3};
+        System.out.println(lotsOfElement(arr));
+    }
+
+    public int lotsOfElement(int[] nums) {
+        Hashtable<Integer, Integer> table = new Hashtable<>();
+        int target = nums[0];
+        //登記表
+        for (int i = 0; i < nums.length; i++) {
+            if (table.containsKey(nums[i])) { //如果table已經存過關於這個數字
+                table.replace(nums[i], table.get(nums[i]) + 1); //讓次數上升
+            } else {
+                table.put(nums[i], 1); //第一次出現就安心放
+            }
+        }
+        //檢查
+        for (int key : table.keySet()) {
+            if (table.get(key) > nums.length / 2) {
+                target = key;
+            }
+        }
+        return target;
+    }
+
+    //136出現一次的數字
     @Test
     public void onceNumOutput() { //JUnit之測試方法似乎不能有回傳值
-        int[] arr = {3, 1, 2, 1, 2, 3, 5, 7, 7};
+        int[] arr = {3, 2, 3};
         System.out.println(onceNum(arr));
-        System.out.println(onceNumTwoListVer(arr));
     }
 
     public int onceNum(int[] arr) {

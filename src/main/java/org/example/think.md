@@ -9,3 +9,6 @@
 K=那個數字 V=出現次數
 如果table已經有這個key，出現便次數+1
 找出value為1的key便是題目想要的答案
+
+### lotsOfElement
+超過半數的都是多數元素
