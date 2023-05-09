@@ -3,6 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 public class LinkedList {
+    //141環狀鏈表
     @Test
     public void hasCycleTest() {
         ListNodeForHasCycle head = new ListNodeForHasCycle(3);
