@@ -24,7 +24,7 @@ public class LinkedList {
         //遍歷鏈表
         ListNodeForHasCycle fast = head;
         ListNodeForHasCycle slow = head;
-        while (fast != null && fast.next != null) { //這句是說，當fast本身不是null，fast.next也不是時，持續循環，也就是說 這是一個環狀鏈表才能成立
+        while (fast != null && fast.next != null) { 
             fast = fast.next.next;
             slow = slow.next;
             if(fast==slow){
