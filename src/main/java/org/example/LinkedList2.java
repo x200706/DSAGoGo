@@ -25,28 +25,16 @@ public class LinkedList2 {
         Stack<ListNode> stack = new Stack<>();
 
         //遍歷鏈表，把它推入堆疊
-        ListNode current = head;
-        while (current != null) {
+        ListNode current= head;
+        while (current.next != null) { //注意這裡，直到後一個沒有了才停止遍歷
             stack.push(current);
             current = current.next;
         }
+        //比較鏈表跟堆疊的依序出現的值是否不吻合
 
-        //產生一個反過來的鏈表
-        head = current;
-        while (!stack.isEmpty()) {
-            current.next = stack.peek();
-            current = current.next;
-            stack.pop();
-        }
-        current.next = null;
 
-//        //看看兩個鏈表內容有無對稱
-//        while (current != null){
-//            head.next;
-//            current.next;
-//        }
 
-        return false;
+        return true;
     }
 
     public class ListNode {
