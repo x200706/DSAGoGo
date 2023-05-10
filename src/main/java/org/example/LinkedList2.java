@@ -25,15 +25,21 @@ public class LinkedList2 {
         Stack<ListNode> stack = new Stack<>();
 
         //遍歷鏈表，把它推入堆疊
-        ListNode current= head;
+        ListNode current = head;
         while (current.next != null) { //注意這裡，直到後一個沒有了才停止遍歷
             stack.push(current);
             current = current.next;
         }
+        stack.push(current);
         //比較鏈表跟堆疊的依序出現的值是否不吻合
-
-
-
+        //把鏈表指針指回頭 重新遍歷
+        current = head;
+        while (current.next != null) {
+            if (stack.pop().val != current.val) {
+                return false;
+            }
+            current = current.next;
+        }
         return true;
     }
 
