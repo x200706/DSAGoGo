@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class Array {
+public class ArrayDS {
     //169多數元素
     @Test
     public void lotsOfElementOutput() {

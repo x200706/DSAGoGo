@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
-public class LinkedList2 {
+public class LinkedListDS2 {
     //234回文鏈表
     @Test
     public void isPalindromeTest() {

@@ -2,7 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-public class LinkedList {
+public class LinkedListDS {
     //141環狀鏈表
     @Test
     public void hasCycleTest() {
