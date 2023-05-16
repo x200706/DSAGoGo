@@ -23,7 +23,7 @@ public class HashtableDS {
         //迴圈
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
-                if (hashtable.get(nums[i]) == hashtable.get(target - nums[j])) {
+                if (hashtable.get(nums[i]) == hashtable.get(target - nums[j])) { //要解決同樣的數進來的問題
                     outputList.add(i);
                 }
             }
