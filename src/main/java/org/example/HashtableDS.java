@@ -9,7 +9,7 @@ import java.util.Hashtable;
 public class HashtableDS {
     @Test
     public void twoSumTest() {
-        System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
     }
 
     public int[] twoSum(int[] nums, int target) {
@@ -23,7 +23,7 @@ public class HashtableDS {
         //迴圈
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
-                if (hashtable.get(nums[i]) == hashtable.get(nums[j])) {
+                if (hashtable.get(nums[i]) == hashtable.get(target - nums[j])) {
                     outputList.add(i);
                 }
             }
