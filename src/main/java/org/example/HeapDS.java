@@ -21,7 +21,7 @@ public class HeapDS {
             }
         });
 
-        //把禮物壓入罪大堆
+        //把禮物壓入最大堆
         for (int items : gifts) {
             giftHeap.add(items);
         }
