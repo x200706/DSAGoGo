@@ -37,6 +37,6 @@ public class HeapDS {
         int[] ansArr = giftHeap.stream().mapToInt(i -> i).toArray();
 
         //加總剩餘禮物
-        return Arrays.stream(ansArr).boxed().mapToLong(i->i).sum();;
+        return Arrays.stream(ansArr).boxed().mapToLong(i->i).sum();
     }
 }
