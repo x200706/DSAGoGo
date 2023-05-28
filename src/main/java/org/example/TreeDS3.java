@@ -2,12 +2,10 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class TreeDS2 {
+public class TreeDS3 {
 
     @Test
     public void maxDepthTest() {
@@ -29,32 +27,19 @@ public class TreeDS2 {
         node3.left = node6;
         node3.right = node7;
 
-        System.out.println(maxDepth(node1));
-
+        invertTree(node1); //直接提交，這邊就沒有遍歷印出來
     }
 
-    public int maxDepth(TreeNode root) {
-        ArrayList<Integer> targetList = new ArrayList<>();
-        int level = 0;
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(11, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
-        return recursion(root, targetList, maxHeap,level);
-    }
-
-    public int recursion(TreeNode root, List<Integer> targetList, PriorityQueue<Integer> maxHeap,int level) {
+    public TreeNode invertTree(TreeNode root) {
+        //此題邊際：空的樹
         if (root == null) {
-            return level;
+            return null;
         }
-        level++;
-        maxHeap.add(level);
-        recursion(root.left, targetList,maxHeap,level);
-        targetList.add(root.val);
-        recursion(root.right, targetList,maxHeap,level);
-        return maxHeap.peek();
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+        root.left = right;
+        root.right = left;
+        return root;
     }
 
 
