@@ -39,7 +39,7 @@ public class TreeDS {
 
     //以遞迴遍歷吧 結果會從最深處add
     public void recursion(TreeNode root, List<Integer> targetList) {
-        //此題的邊際：空的樹，先return掉
+        //此題邊際：空的樹 或是 遍歷到沒有了（終止條件）
         if (root == null) {
             return;
         }
