@@ -32,8 +32,20 @@ public class TreeDS {
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {
-        //小心陷阱！它會傳空的樹（此題邊際）
-        return new ArrayList<>();
+        ArrayList<Integer> targetList = new ArrayList<>();
+        recursion(root, targetList);
+        return targetList;
+    }
+
+    //以遞迴遍歷吧 結果會從最深處add
+    public void recursion(TreeNode root, List<Integer> targetList) {
+        //此題的邊際：空的樹，先return掉
+        if (root == null) {
+            return;
+        }
+        recursion(root.left,targetList);
+        targetList.add(root.val);
+        recursion(root.right,targetList);
     }
 
 
