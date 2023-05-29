@@ -2,9 +2,6 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.PriorityQueue;
-
 public class TreeDS3 {
 
     @Test
@@ -31,7 +28,6 @@ public class TreeDS3 {
     }
 
     public TreeNode invertTree(TreeNode root) {
-        //此題邊際：空的樹 或是 遍歷到沒有了（終止條件）
         if (root == null) {
             return null;
         }
