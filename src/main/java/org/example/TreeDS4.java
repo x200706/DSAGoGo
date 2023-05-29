@@ -29,45 +29,8 @@ public class TreeDS4 {
 
     public boolean isSymmetric(TreeNode root) {
         boolean flag = true;
-        ArrayList<Integer> tree = new ArrayList<>();
-        inorderTraversal(root, tree);
-        ArrayList<Integer> reverseTree = new ArrayList<>();
-        inorderTraversal(invertTree(root), reverseTree);
-
-        for (int i = 0; i < tree.size(); i++) {
-            if (tree.get(i) != reverseTree.get(i)) {
-                flag = false;
-                break;
-            }
-        }
-
         return flag;
-    }
-
-    //中序遍歷器
-    public void inorderTraversal(TreeNode root, List<Integer> targetList) {
-        if (root == null) {
-            return;
-        }
-
-        inorderTraversal(root.left, targetList);
-        targetList.add(root.val);
-        inorderTraversal(root.right, targetList);
-
-    }
-
-    //翻轉器
-    public TreeNode invertTree(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        TreeNode left = invertTree(root.left);
-        TreeNode right = invertTree(root.right);
-        root.left = right;
-        root.right = left;
-        return root;
-    }
-
+    }   
 
     public class TreeNode {
         int val;
