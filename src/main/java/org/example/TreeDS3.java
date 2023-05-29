@@ -2,9 +2,6 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.PriorityQueue;
-
 public class TreeDS3 {
 
     @Test
