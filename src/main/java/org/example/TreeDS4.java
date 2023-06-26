@@ -3,7 +3,9 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 
 public class TreeDS4 {
@@ -28,9 +30,31 @@ public class TreeDS4 {
     }
 
     public boolean isSymmetric(TreeNode root) {
-        boolean flag = true;
-        return flag;
-    }   
+        return check(root, root);
+    }
+
+    public boolean check(TreeNode r1, TreeNode r2) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(r1);
+        queue.offer(r2);
+
+        while (!queue.isEmpty()) {
+            r1 = queue.poll();
+            r2 = queue.poll();
+            if (r1 == null && r2 == null) {
+                continue;
+            }
+            if ((r1 == null || r2 == null) || (r1.val != r2.val)) {
+                return false;
+            }
+            queue.offer(r1.left);
+            queue.offer(r2.right);
+
+            queue.offer(r1.right);
+            queue.offer(r2.left);
+        }
+        return true;
+    }
 
     public class TreeNode {
         int val;
